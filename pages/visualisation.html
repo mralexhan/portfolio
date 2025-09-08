@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page.css">
+    <title>Alex Han Portfolio</title>
+</head>
+<body>
+    <header>
+        Alex Han's Portfolio
+        <div class="menu">
+            <a class="navbox" href="../index.html">Projects</a>
+            <a class="navbox" href="../about.html">About</a>
+        </div>
+      <!--Creates hamburger menu -->
+      <div class="menu-toggle">
+        <span></span>
+      </div>
+        <div id="headerLinks">
+            <a href="../index.html">Projects</a>
+            <a href="../about.html">About</a>
+        </div>
+    </header>
+
+    <main>
+        <div id="left">
+            <div id="slider">
+                <div class="slide" style="background-image: url('../images/visualisation3.png'); background-size: 100%; background-position: top;"></div>
+                <div class="slide" style="background-image: url('../images/visualisation4.png'); background-size: 100%;"></div>
+                <div class="slide" style="background-image: url('../images/visualisation2.png'); background-size: 100%;"></div>
+                <div class="slide" style="background-image: url('../images/visualisation5.png'); background-size: 100%;"></div>
+            </div>
+            
+            <div id="dotDiv">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+
+        <div id="right">
+            <h1>Visualising Biodiversity | 2023</h1>
+            <div id="tagList">
+                <div class="skillTag">Communication Design</div>
+                <div class="skillTag">Data Visualisation</div>
+                <div class="skillTag">Data Organisation</div>
+                <div class="skillTag">Wireframing</div>
+                <div class="skillTag">Frontend Coding</div>
+            </div>
+            <p>
+                Visualising Biodiversity was a design project mixing data visualisation and communication design. 
+                    In this project, I chose to highlight the effects food agriculture has on the terrestrial biodiversity of Australia
+                    to help people understand how foods they eat may affect the wildlife of the country. 
+                    <br><br>
+                    For the data visualisation, line graphs were used to highlight the correlation between food agriculture and biodiversity. 
+                     An interactive choropleth map was also created so users can see areas where farmland of different food products overlap with the habitats of 
+                     threatened wildlife. The data was found on publicly available sources and collated and organised in Microsoft Excel.
+                    <br><br>
+                    In order to present the data and ideas, a simple website was created through HTML and CSS, with the interactive graphs being
+                    programmed through the Plotly.js library. Careful attention was to the usability and readability of the website, with user testing
+                    being conducted to make sure the core concept was being properly communicated.
+                    </p>
+            </p>
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+</body>
+</html>

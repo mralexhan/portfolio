@@ -1,0 +1,357 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+body{
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbox{
+    display: none;
+}
+
+header{
+    height: 10vh;
+    width: 98vw;
+    background-color: #34277F;
+    box-shadow: 0px 2px 5px rgb(0,0,0,0.25), 1vw -2vw white;
+    margin: 1vw 2vw;
+    border-radius: 25px;
+    padding: 2em;
+    padding-right: 3em;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    color: white;
+    font-weight: 550;
+    font-size: 1.1em;
+
+    position: sticky;
+    top: 1vw;
+}
+
+#headerLinks{
+    display: flex;
+    gap: 5vw;
+}
+
+#headerLinks a{
+    color: white;
+    font-weight: 550;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+#headerLinks a:hover{
+    color: rgb(97, 190, 221);
+    transition-duration: 0.2s;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+#left{
+    width: 49vw;
+    padding-left: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+#slider{
+    position: relative;
+    width: 45vw;
+    height: 60vh;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgb(0,0,0,0.25);
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    overflow: visible;
+    margin-bottom: 1em;
+}
+
+.slide{
+    width: 100%;
+    animation-name: fade;
+    animation-timing-function: linear;
+    animation-duration: 7s;
+    animation-fill-mode: forwards;
+    opacity: 1;
+    z-index: 1;
+}
+
+@keyframes fade{
+    0% {opacity: 0}
+    10% {opacity: 0.9}
+    50% {opacity: 1}
+    90% {opacity: 0.9}
+    100% {opacity: 0}
+}
+
+#dotDiv{
+    width: 10vw;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    justify-content: space-between;
+}
+
+.dot{
+    flex-shrink: 0;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+    background-color: #c7c7c7;
+    transition: background-color 0.6s ease;
+}
+
+.dot:hover{
+    cursor: pointer;
+}
+
+.active{
+    background-color: #363636;
+}
+
+#right{
+    width: 45vw;
+    box-sizing: border-box;
+    padding: 1em;
+}
+
+#right h1{
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+#tagList{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin-bottom: 0.5em;
+}
+
+.skillTag{
+    display: flex;
+    width: auto;
+    height: 2em;
+    justify-content: center;
+    align-items: center;
+    background-color: #4A159A;
+    border-radius: 5px;
+    color: white;
+    font-weight: 550;
+    font-size: 0.8em;
+    box-sizing: border-box;
+    padding: 0.5em 1em;
+}
+
+#right p{
+    font-weight: 400;
+    font-size: 0.9em;
+}
+
+
+@media only screen and (max-width: 800px){
+    header{
+        font-size: 1.1em;
+        margin-bottom: 1em;
+        z-index: 5;
+    }
+
+    /*Creates a nav bar hidden in the right side of the screen. Code from https://codepen.io/robdongas/pen/MWvKMRp*/
+    .menu{
+    position: fixed;
+    top: 0;
+    right: -70vw;
+    z-index: 9996;
+    color: black;
+    background: #3a2c8e;
+    width: 55vw;
+    padding-top: 10vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px 0 0 5px;
+    border-color: black;
+    transition-property: right;
+    transition-duration: 0.2s;
+    }
+
+    /*Makes the menu appear when the user clicks on it*/
+    .menu.active{
+    right: 0;
+    }
+
+    /*Styles the text/links inside the nav menu*/
+    .menu a{
+    color: white;
+    font-size: 1em;
+    text-decoration: none;
+    }
+
+    /*Creates the space where the hamburger menu would appear*/
+    .menu-toggle{
+    position: absolute;
+    top: 3.5vh;
+    right: 10vw;
+    z-index: 9997;
+    height: 5vh;
+    width: 8vw;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    }
+
+    /*Styles the three bars of the hamburger menu*/
+    .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after{
+    position: absolute;
+    content: "";
+    width: 10vw;
+    height: 0.5vh;
+    background: white;
+    border-radius: 20px;
+    transition: 500ms cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    /*Spaces the top bar of the hamburger menu*/
+    .menu-toggle span::before{
+    top:-1.7vh;
+    }
+
+    /*Spaces the bottom bar of the hamburger menu*/
+    .menu-toggle span::after{
+    top: 1.7vh;
+    }
+
+    /*Makes the nav icon invisible when clicked*/
+    .menu-toggle.active > span{
+    background: transparent;
+    }
+
+    /*Colors the bars after they've been clicked*/
+    .menu-toggle.active > span::before, .menu-toggle.active > span::after{
+    top: 0px;
+    }
+
+    /*Rotates the top bar to form half of the "X"*/
+    .menu-toggle.active > span::before{
+    transform: rotate(-225deg);
+    }
+
+    /*Rotates the bottom bar to form the other half of the "X"*/
+    .menu-toggle.active > span::after{
+    transform: rotate(225deg);
+    }
+
+    /*Creates the individual boxes inside the nav menu*/
+    .navbox{
+    margin-bottom: -2px; /*Makes it so the borders overlap and don't seem thicker*/
+    background-color: #3a2c8e;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 2px 0px;
+    border-color: white;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    }
+
+    /*Changes what the navboxes looks like when the user hovers over them*/
+    .navbox:hover{
+    background-color: #2a2066;
+    color: black;
+    cursor: pointer;
+    }
+
+    .active{
+        background-color: #3a2c8e;
+    }
+
+    #headerLinks{
+        display: none;
+    }
+
+    main{
+        flex-direction: column;
+    }
+
+    #slider{
+        width: 90vw;
+        height: 30vh;
+    }
+
+    #dotDiv{
+        justify-content: center;
+        gap: 1.5em;
+    }
+
+    .dot{
+        width: 0.8em;
+        height: 0.8em;
+    }
+
+    #left, #right{
+        width: 90vw;
+    }
+
+    #right h1{
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    #right p{
+        font-size: 0.8em;
+    }
+
+    #tagList{
+        gap: 0.5em;
+        width: 85vw;
+        margin-bottom: 1em;
+    }
+
+    .skillTag{
+        font-size: 0.6em;
+        padding: 0.5em 1em;
+    }
+
+    
+}
